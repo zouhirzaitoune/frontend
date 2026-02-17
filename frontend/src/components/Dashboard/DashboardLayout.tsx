@@ -16,19 +16,7 @@ import ZaitounibioLogo from '../ZaitounibioLogo';
 const DashboardLayout: React.FC = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(window.innerWidth > 1024);
 
-    // Add effect to handle resize
-    React.useEffect(() => {
-        const handleResize = () => {
-            if (window.innerWidth <= 1024) {
-                setIsSidebarOpen(false);
-            } else {
-                setIsSidebarOpen(true);
-            }
-        };
-        // We only want to set initial state or drastic changes, maybe just default false on mobile is enough.
-        // Actually, let's just leave the initial state check.
-        // Moving to event listener might be too aggressive if user manually opened it.
-    }, []);
+
     const { logout } = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
